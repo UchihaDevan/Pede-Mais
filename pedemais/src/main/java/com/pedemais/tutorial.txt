@@ -1,0 +1,150 @@
+ackage com.pedemais;
+
+public class tutorial {
+    A 1° etapa para realizar essa tarefa irá ser usar a classe Scanner do java.
+
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+  
+    Scanner scanner = new Scanner(System.in);
+  
+  }  
+}
+
+Com ela instanciada você vai notar que agora conseguimos realizar a inserção de algum texto e também conseguimos ler textos inseridos no terminal.
+
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+  
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("Digite algum texto: ");
+    String texto = scanner.nextLine(); // lendo o texto inserido no terminal
+    
+    System.println("Você digitou: " + texto);
+  
+  }  
+}
+
+A 2° etapa é efetuar a captura dessas informações e inseri-las na lista. Para fazer isso vou vai precisar instanciar a sua classe User para e inserir o que foi capturado nela através do construtor. Com o seu objeto usuarioNovo populado com as informações inseridas pelo terminal, basta agora adiciona-los na sua lista ( usuarios ).
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+class Main {
+  public static void main(String[] args) {
+  
+    // lista onde irá ser armazendo seus usuários
+    ArrayList<User> usuarios = new ArrayList<User>();
+    
+    Scanner scanner = new Scanner(System.in);
+    
+    System.out.println("Digite seu nome completo: ");
+    String nomeCompleto = scanner.nextLine(); // lendo o nome inserido no terminal
+    
+    System.out.println("Digite seu sexo: ");
+    String sexo = scanner.nextLine(); // lendo o sexo inserido no terminal
+  
+    // instancia do novo usuário que irá ser inserido na lista
+    User novoUsuario = User(nomeCompleto, sexo);
+    usuarios.add(novoUsuario);
+
+    scanner.close(); // fechando o scanner
+
+  }  
+}
+
+Agora vamos a 3º etapa, essa talvez a que você esteja realmente tentando fazer, inserir vários registros na lista.
+
+Primeiro temos que determinar uma variável para controlarmos as inserções e o nosso programa na ficar em um loop infinito.
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+
+class Main {
+  public static void main(String[] args) {
+  
+    // lista onde irá ser armazendo seus usuários
+    ArrayList<User> usuarios = new ArrayList<User>();
+    
+    Scanner scanner = new Scanner(System.in);
+    boolean controleFluxo = true; // variável que ira controlar o nosso fluxo dentro do loop ( while )
+    
+    while(controleFluxo) {
+    
+        //...
+    
+    }
+    
+
+  }  
+}
+
+Depois basta adicionar o código anterior dentro do loop.
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+class Main {
+  public static void main(String[] args) {
+  
+    // lista onde irá ser armazendo seus usuários
+    ArrayList<User> usuarios = new ArrayList<User>();
+    
+    Scanner scanner = new Scanner(System.in);
+    
+    System.out.println("Digite seu nome completo: ");
+    String nomeCompleto = scanner.nextLine(); // lendo o nome inserido no terminal
+    
+    System.out.println("Digite seu sexo: ");
+    String sexo = scanner.nextLine(); // lendo o sexo inserido no terminal
+  
+    // instancia do novo usuário que irá ser inserido na lista
+    User novoUsuario = User(nomeCompleto, sexo);
+    usuarios.add(novoUsuario);
+    
+
+  }  
+}
+
+E para finalizar colocamos uma condição dentro de um if para parar o loop quando quisermos.
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+class Main {
+  public static void main(String[] args) {
+  
+    // lista onde irá ser armazendo seus usuários
+    ArrayList<User> usuarios = new ArrayList<User>();
+    
+    Scanner scanner = new Scanner(System.in);
+    boolean controleFluxo = true; // variável que ira controlar o nosso fluxo dentro do loop ( while )
+    
+    while(controleFluxo){
+    
+      System.out.println("Digite seu nome completo:");
+      String nome = scanner.nextLine();
+
+      System.out.println("Digite seu sexo:");
+      String sexo = scanner.nextLine();
+
+      User usuario = new User(nome, sexo);
+      usuarios.add(usuario);
+      
+      // para o loop caso o usuário digite "N"
+      if(resposta.equals("N")){
+        controleFluxo = false;
+        break;
+      }
+  }  
+  
+  scanner.close();
+  
+}
+
+}
